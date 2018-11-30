@@ -10,4 +10,6 @@ public interface UsuarioDAO {
 
     boolean saveUsuario(Usuario usuario); //para crear un usuario en base de datos
 
+    void quechido(Usuario usuario);
+
 }
