@@ -5,17 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import sample.dataaccess.DepartmentDAO;
-import sample.dataaccess.DepartmentDAOMySQL;
-import sample.dataaccess.UsuarioDAO;
-import sample.dataaccess.UsuarioDAOMySQL;
-import sample.model.Usuario;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/login.fxml"));
         primaryStage.setTitle("Empresa");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
