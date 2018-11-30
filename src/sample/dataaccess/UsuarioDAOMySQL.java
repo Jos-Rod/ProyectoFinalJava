@@ -12,6 +12,12 @@ import java.util.List;
 
 public class UsuarioDAOMySQL implements UsuarioDAO {
 
+
+    @Override
+    public void quechido(Usuario usuario) {
+
+    }
+
     @Override
     public Usuario login(Usuario usuario) {
 
