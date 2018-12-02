@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AddEmpleadoController">
+   <children>
+      <TextField fx:id="txtNombre" layoutX="182.0" layoutY="105.0" AnchorPane.leftAnchor="182.0" AnchorPane.topAnchor="100.0" />
+      <TextField fx:id="txtApellido" layoutX="178.0" layoutY="173.0" AnchorPane.leftAnchor="182.0" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="txtEmail" layoutX="178.0" layoutY="237.0" AnchorPane.leftAnchor="182.0" AnchorPane.topAnchor="200.0" />
+      <ComboBox fx:id="cmbDep" layoutX="215.0" layoutY="319.0" prefWidth="150.0" AnchorPane.topAnchor="250.0" />
+      <Label layoutX="17.0" layoutY="111.0" text="Nombre" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="100.0" />
+      <Label layoutX="17.0" layoutY="179.0" text="Apellido" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="150.0" />
+      <Label layoutX="14.0" layoutY="243.0" text="Correo" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="200.0" />
+      <Button fx:id="btnGuardar" layoutX="493.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleGuardar" text="Guardar" />
+      <Button fx:id="btnBack" layoutX="32.0" layoutY="36.0" mnemonicParsing="false" onAction="#handleBack" text="Volver" />
+      <Label layoutX="189.0" layoutY="36.0" text="Agregar Empleado">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="12.0" layoutY="325.0" text="Departamento" AnchorPane.topAnchor="250.0" />
+   </children>
+</AnchorPane>
