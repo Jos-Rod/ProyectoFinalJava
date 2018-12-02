@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EmpleadosController">
+   <children>
+      <TableView fx:id="tblEmpleados" layoutX="186.0" layoutY="109.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="150.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Nombre" />
+          <TableColumn prefWidth="75.0" text="Apellidos" />
+            <TableColumn prefWidth="75.0" text="Departamento ID" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnBack" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleBack" text="Button" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="41.0" />
+      <Button fx:id="btnAddEmp" layoutX="553.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleAddEmp" text="+" />
+      <Button fx:id="btnGra" layoutX="508.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleGra" text="Grafica" />
+      <TextField fx:id="txtEmail" layoutX="188.0" layoutY="98.0" />
+      <Label layoutX="235.0" layoutY="22.0" text="Empleados">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
