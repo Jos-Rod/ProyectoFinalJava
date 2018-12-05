@@ -12,8 +12,8 @@
       <Button fx:id="btnBack" layoutX="49.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleBack" text="Volver" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0" />
       <TableView fx:id="tblDepartamentos" layoutX="49.0" layoutY="124.0" prefHeight="200.0" prefWidth="481.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="100.0">
         <columns>
-          <TableColumn prefWidth="287.0" text="Nombre" />
-          <TableColumn prefWidth="292.0" text="Numero" />
+          <TableColumn fx:id="tblNombre" prefWidth="287.0" text="Nombre" />
+          <TableColumn fx:id="tblLocation" prefWidth="292.0" text="Lugar" />
         </columns>
       </TableView>
       <Button fx:id="btnAddDep" layoutX="508.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleAddDep" text="+" AnchorPane.bottomAnchor="321.0" AnchorPane.leftAnchor="512.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />

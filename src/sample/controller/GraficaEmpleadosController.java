@@ -7,47 +7,38 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import sample.Main;
 import sample.api.TareaAPI;
 import sample.model.Tarea;
-import sample.model.Usuario;
 
 import java.util.List;
 
-
-public class GraficaController {
+public class GraficaEmpleadosController {
 
     public Main mainapp;
 
-    public Usuario usuarioGrafica;
+    @FXML
+    private Button btnVolver;
 
     @FXML
-    private BarChart<String, Integer> BarEmpleados;
+    private BarChart<String, Integer> BarChartGrafica;
 
     @FXML
     private CategoryAxis xAxis;
 
     @FXML
-    private Button btnBack;
+    private void handleVolver() {
 
-    @FXML
-    private Label lblTitulo;
-
-    @FXML
-    private void handleBack(){
-
-        mainapp.showEmpleadoSeleccionado(usuarioGrafica);
-        Stage stage = (Stage) xAxis.getScene().getWindow();
+        mainapp.showEmpleados();
+        Stage stage = (Stage) btnVolver.getScene().getWindow();
         stage.close();
 
     }
 
     public void ponerGrafica() {
-        lblTitulo.setText("Gráfica de " + usuarioGrafica.getNombre());
 
-        //poner Grafica
+        //poner credito
         //lista de items categories
         ObservableList<String> olCategorias = FXCollections.observableArrayList();
         olCategorias.add("Pendiente");
@@ -62,7 +53,7 @@ public class GraficaController {
 
         TareaAPI tapi = new TareaAPI();
 
-        List<Tarea> listaTareas = tapi.getAllFromUser(usuarioGrafica.getIdUser());
+        List<Tarea> listaTareas = tapi.getAll();
 
         for (Tarea tarea : listaTareas) {
             if (tarea.getEstado().equals("Pendiente")) {
@@ -78,23 +69,8 @@ public class GraficaController {
         series.getData().add(new XYChart.Data<>("En Proceso", cuentaEnProceso));
         series.getData().add(new XYChart.Data<>("Terminado", cuentaTerminado));
 
-        BarEmpleados.getData().add(series);
-
-//        xAxis.setCategories(olmonths);
-//        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-//        for (int i = 0; i < months.length; i++) {
-//            int cuenta = 0;
-//            for (Employee e:
-//                    listaE) {
-//                if ((e.getDob().getMonth()) == i) {
-//                    cuenta++;
-//                }
-//            }
-//            series.getData().add(new XYChart.Data<>(months[i], cuenta));
-//        }
-//
-//        barChart1.getData().add(series);
-
+        BarChartGrafica.getData().add(series);
 
     }
+
 }
