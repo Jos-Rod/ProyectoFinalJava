@@ -213,7 +213,7 @@ public class Main extends Application {
             controller.llenarFecha();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Vista de Empleados");
+            primaryStage.setTitle("Agregar empleado");
             primaryStage.initModality(Modality.APPLICATION_MODAL);
             primaryStage.show();
 
@@ -386,7 +386,7 @@ public class Main extends Application {
             controller.ponerGrafica();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Agregar Tarea a Empleado");
+            primaryStage.setTitle("Gráfica de Empleado");
             primaryStage.initModality(Modality.APPLICATION_MODAL);
             primaryStage.show();
 
@@ -410,7 +410,7 @@ public class Main extends Application {
             controller.ponerGrafica();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Agregar Tarea a Empleado");
+            primaryStage.setTitle("Gráfica de la compañía");
             primaryStage.initModality(Modality.APPLICATION_MODAL);
             primaryStage.show();
 

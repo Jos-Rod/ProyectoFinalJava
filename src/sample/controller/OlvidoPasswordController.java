@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -35,12 +36,20 @@ public class OlvidoPasswordController implements Initializable {
     @FXML
     private Button btnConfirmar;
 
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
     @FXML
     private void handleConfirmar() {
         //mandar a olvido contrasena
-        if (txtRespuesta.equals("")) {
+        if (txtRespuesta.getText().trim().equals("")) {
             //alert: debes ingresar tu respuesta para poder verificarla
             //TODO: Agregar alerta con mensaje
+
+            alert.setTitle("Password Olvidada");
+            alert.setHeaderText("Password Olvidada");
+            alert.setContentText("Debes ingresar tu respuesta para poder verificarla");
+            alert.showAndWait();
+
         } else {
             //confirmar respuesta
             if (txtRespuesta.getText().equals(mainapp.usuarioGlobal.getRespuestaSecreta())) {
@@ -52,7 +61,14 @@ public class OlvidoPasswordController implements Initializable {
                     //correo mandado
 
                     //Regresar a login...
+
                     //TODO: Mandar alerta diciendo que el correo ha sido enviado
+
+                    alert.setTitle("Password Olvidada");
+                    alert.setHeaderText("Correo enviado");
+                    alert.setContentText("Un correo que contiene tu contraseña ha sido enviado a tu correo.");
+                    alert.showAndWait();
+
                     mainapp.showLogin();
                     Stage stage = (Stage) lblPregunta.getScene().getWindow();
                     // do what you have to do
@@ -67,6 +83,12 @@ public class OlvidoPasswordController implements Initializable {
             } else {
                 //respuesta incorrecta
                 //TODO: Alert de respuesta incorrecta
+
+                alert.setTitle("Password Olvidada");
+                alert.setHeaderText("Respuesta Incorrecta");
+                alert.setContentText("La respuesta ingresada no es correcta.");
+                alert.showAndWait();
+
 
             }
         }

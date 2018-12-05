@@ -28,5 +28,6 @@
       <Button fx:id="btnRealizado" layoutX="477.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleRealizado" text="Realizado" />
       <Button fx:id="btnSalir" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleSalir" text="Salir" />
       <ComboBox fx:id="cmbStatus" layoutX="428.0" layoutY="123.0" onAction="#handleStatus" prefWidth="150.0" />
+      <Label layoutX="428.0" layoutY="86.0" prefHeight="27.0" prefWidth="116.0" text="Filtrar por:" />
    </children>
 </AnchorPane>

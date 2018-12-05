@@ -38,6 +38,10 @@ public class LoginController implements Initializable {
             //no tiene correo escrito
             //TODO: Mostrar alerta para ingresar correo
             System.out.println("Favor de ingresar un correo para recuperar tu contraseña");
+            alert.setTitle("Correo");
+            alert.setHeaderText("Password Olvidada");
+            alert.setContentText("Ingresa un correo");
+            alert.showAndWait();
         } else {
             //si tiene correo
 

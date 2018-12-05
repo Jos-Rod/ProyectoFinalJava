@@ -103,7 +103,7 @@ public class Empleado2Controller implements Initializable {
         ObservableList<String> ol = FXCollections.observableArrayList();
         ol.add("Ninguno");
         ol.add("Pendiente");
-        ol.add("En espera");
+        ol.add("En Proceso");
         ol.add("Terminado");
 
         cmbStatus.setItems(ol);
@@ -183,7 +183,7 @@ public class Empleado2Controller implements Initializable {
         ObservableList<Tarea> listaTareas = FXCollections.observableArrayList();
 
         for (Tarea tarea : api.getAllFromUser(mainapp.usuarioGlobal.getIdUser())) {
-            if (tarea.getEstado().equals("En espera")){
+            if (tarea.getEstado().equals("En Proceso")){
                 listaTareas.add(tarea);
             }
         } //aqui llenamos el array y la anadimos a la tabla

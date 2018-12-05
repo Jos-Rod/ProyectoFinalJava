@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controller/EmpleadoSelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/EmpleadoSelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controller/EmpleadosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/EmpleadosController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/view/Empleado2View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view/Empleado2View.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/view/EmpleadosView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view/EmpleadosView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/view/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/view/login.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="367" column="31" lean-forward="true" selection-start-line="367" selection-start-column="31" selection-end-line="367" selection-end-column="31" />
+            <state relative-caret-position="554">
+              <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
               <folding>
                 <element signature="method#showPrincipalAdmin#0;class#Main#0" />
                 <element signature="method#showDepartamentos#0;class#Main#0" />
@@ -87,19 +84,70 @@
                 <element signature="method#showAddDepartamento#0;class#Main#0" />
                 <element signature="method#showEmpleado2#0;class#Main#0" />
                 <element signature="method#showEmpleadoSeleccionado#0;class#Main#0" />
+                <element signature="method#showTareaView#0;class#Main#0" />
+                <element signature="method#showGrafica#0;class#Main#0" />
+                <element signature="method#showGraficaEmpleados#0;class#Main#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddEmpleadoController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddEmpleadoController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+            <state relative-caret-position="271">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
               <folding>
                 <element signature="method#initialize#0;class#AddEmpleadoController#0" />
                 <element signature="method#checarCorreoRepetido#0;class#AddEmpleadoController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DepartamentoAPI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/api/DepartamentoAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <folding>
+                <element signature="method#getAll#0;class#DepartamentoAPI#0" />
+                <element signature="method#saveDepartamento#0;class#DepartamentoAPI#0" />
+                <element signature="method#getDepartamento#0;class#DepartamentoAPI#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Empleado2Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#salir#0;class#Empleado2Controller#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="41" column="16" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="43" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OlvidoPasswordController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,7 +199,6 @@
         <option value="$PROJECT_DIR$/src/sample/api/DepartamentoAPI.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Usuario.java" />
         <option value="$PROJECT_DIR$/src/sample/view/OlvidoPassword.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/DepartamentosController.java" />
         <option value="$PROJECT_DIR$/src/sample/view/Empleado2View.fxml" />
         <option value="$PROJECT_DIR$/src/sample/view/EmpleadoSelView.fxml" />
@@ -162,15 +209,16 @@
         <option value="$PROJECT_DIR$/src/sample/view/GraficaEmpleadoView.fxml" />
         <option value="$PROJECT_DIR$/src/sample/view/GraficaEmpleados.fxml" />
         <option value="$PROJECT_DIR$/src/sample/controller/GraficaController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/GraficaEmpleadosController.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/TareaController.java" />
         <option value="$PROJECT_DIR$/src/sample/view/TareaView.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/EmpleadoSelController.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/EmpleadosController.java" />
-        <option value="$PROJECT_DIR$/src/sample/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java" />
+        <option value="$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java" />
+        <option value="$PROJECT_DIR$/src/sample/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
       </list>
     </option>
   </component>
@@ -400,12 +448,12 @@
       <workItem from="1543875306646" duration="14219000" />
       <workItem from="1543890256996" duration="40121000" />
       <workItem from="1543979242785" duration="64000" />
-      <workItem from="1543979502327" duration="7171000" />
+      <workItem from="1543979502327" duration="9522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89586000" />
+    <option name="totallyTimeSpent" value="91937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -429,7 +477,7 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32916266" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20404235" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.20404235" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32916266" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32916266" />
       <window_info id="Capture Tool" order="5" />
@@ -528,12 +576,6 @@
           <line>127</line>
           <properties />
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sample/Main.java</url>
-          <line>231</line>
-          <properties />
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/sample/api/UsuarioAPI.java</url>
@@ -669,19 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/api/DepartamentoAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="113" column="48" selection-start-line="113" selection-start-column="48" selection-end-line="113" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAll#0;class#DepartamentoAPI#0" />
-            <element signature="method#saveDepartamento#0;class#DepartamentoAPI#0" />
-            <element signature="method#getDepartamento#0;class#DepartamentoAPI#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -711,16 +740,6 @@
       </provider>
     </entry>
     <entry file="file://D:/Parte del email/dataaccess/UsuarioDAOMySQL.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="48" column="51" lean-forward="true" selection-start-line="48" selection-start-column="51" selection-end-line="48" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/view/ViewDepartamentos.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -935,10 +954,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="method#initialize#0;class#AddEmpleadoController#0" />
+            <element signature="method#checarCorreoRepetido#0;class#AddEmpleadoController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/api/DepartamentoAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="method#getAll#0;class#DepartamentoAPI#0" />
+            <element signature="method#saveDepartamento#0;class#DepartamentoAPI#0" />
+            <element signature="method#getDepartamento#0;class#DepartamentoAPI#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controller/Empleado2Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="193" column="39" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="39" />
+        <state relative-caret-position="456">
+          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#salir#0;class#Empleado2Controller#0" />
@@ -948,18 +990,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="119" column="4" selection-start-line="119" selection-start-column="4" selection-end-line="119" selection-end-column="4" />
+        <state relative-caret-position="266">
+          <caret line="41" column="16" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/controller/OlvidoPasswordController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding>
-            <element signature="method#handleOlvidado#0;class#LoginController#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="367" column="31" lean-forward="true" selection-start-line="367" selection-start-column="31" selection-end-line="367" selection-end-column="31" />
+        <state relative-caret-position="554">
+          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
           <folding>
             <element signature="method#showPrincipalAdmin#0;class#Main#0" />
             <element signature="method#showDepartamentos#0;class#Main#0" />
@@ -970,17 +1019,9 @@
             <element signature="method#showAddDepartamento#0;class#Main#0" />
             <element signature="method#showEmpleado2#0;class#Main#0" />
             <element signature="method#showEmpleadoSeleccionado#0;class#Main#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/controller/AddEmpleadoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
-          <folding>
-            <element signature="method#initialize#0;class#AddEmpleadoController#0" />
-            <element signature="method#checarCorreoRepetido#0;class#AddEmpleadoController#0" />
+            <element signature="method#showTareaView#0;class#Main#0" />
+            <element signature="method#showGrafica#0;class#Main#0" />
+            <element signature="method#showGraficaEmpleados#0;class#Main#0" />
           </folding>
         </state>
       </provider>
