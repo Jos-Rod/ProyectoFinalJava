@@ -11,6 +11,7 @@ import sample.dataaccess.UsuarioDAOMySQL;
 import sample.model.Usuario;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -23,7 +24,7 @@ public class LoginController implements Initializable {
     private TextField txtEmail;
 
     @FXML
-    private TextField txtPassword;
+    private PasswordField txtPassword;
 
     @FXML
     private Button btnOlvidado;
@@ -53,6 +54,8 @@ public class LoginController implements Initializable {
 
     }
 
+
+
     @FXML
     public void initialize(URL url, ResourceBundle rb){    }
 
@@ -60,45 +63,52 @@ public class LoginController implements Initializable {
     private void handleEntrar() {
         Usuario u = new Usuario();
 
-
-
         u.setEmail(txtEmail.getText());
         u.setPassword(txtPassword.getText());
 
         Usuario usuario = uapi.login(u);
         //checar que los campos este llenos
-        if (txtEmail.getText().equals("") || txtPassword.getText().equals("")) {
+        if (txtEmail.getText().trim().equals("") || txtPassword.getText().trim().equals("")) {
             alert.setHeaderText("Campos sin llenar");
             alert.setContentText("Verifique sus Datos");
             alert.showAndWait();
         } else {
-            if (usuario != null) {
 
-                System.out.println("Todo correcto, pasando...");
+            if (usuario != null)  {
+
+                if (usuario.getIdUser() != 0) {
+
+                    System.out.println("Todo correcto, pasando...");
 
 
-                mainapp.usuarioGlobal = usuario;
+                    mainapp.usuarioGlobal = usuario;
 
-                //ver si es usuario administrador o empleado
-                if (usuario.getTipo().equals("Admin")) {
-                    //es administrador
-                    mainapp.showPrincipalAdmin();
+                    //ver si es usuario administrador o empleado
+                    if (usuario.getTipo().equals("Admin")) {
+                        //es administrador
+                        mainapp.showPrincipalAdmin();
+
+                    } else {
+                        //es empleado
+                        mainapp.showEmpleado2();
+                    }
+
+                    Stage stage = (Stage) txtEmail.getScene().getWindow();
+                    // do what you have to do
+                    stage.close();
 
                 } else {
-                    //es empleado
-                    mainapp.showEmpleado2();
+                    alert.setHeaderText("Password incorrecto");
+                    alert.setContentText("Verifique su correo");
+                    alert.showAndWait();
                 }
-
-                Stage stage = (Stage) txtEmail.getScene().getWindow();
-                // do what you have to do
-                stage.close();
 
             } else {
 
                 // Mandar alerta al usuario
 
-                alert.setHeaderText("Contrasena o correo incorrecto");
-                alert.setContentText("Verifique sus Datos");
+                alert.setHeaderText("Correo incorrecto");
+                alert.setContentText("Verifique su correo");
                 alert.showAndWait();
 
             }
@@ -106,4 +116,7 @@ public class LoginController implements Initializable {
         }
 
     }
+
+
+
 }

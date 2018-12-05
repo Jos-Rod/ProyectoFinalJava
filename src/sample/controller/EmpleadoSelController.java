@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import sample.Main;
 import sample.api.DepartamentoAPI;
+import sample.api.TareaAPI;
 import sample.api.UsuarioAPI;
 import sample.model.Departamento;
 import sample.model.Usuario;
@@ -109,9 +110,20 @@ public class EmpleadoSelController {
     @FXML
     private void handleGra(){
 
-        mainapp.showGrafica(viendoUsuario);
-        Stage stage = (Stage) txtNombre.getScene().getWindow();
-        stage.close();
+        //Checar si el usuario tiene tareas
+        TareaAPI tapi = new TareaAPI();
+        if (tapi.getAllFromUser(viendoUsuario.getIdUser()).size() > 0) {
+            //si tiene tareas el usuario
+            mainapp.showGrafica(viendoUsuario);
+            Stage stage = (Stage) txtNombre.getScene().getWindow();
+            stage.close();
+        } else {
+            //no tiene tareas el usuario
+            alert.setTitle("Tareas");
+            alert.setHeaderText("Sin Tareas");
+            alert.setContentText("El usuario no tiene tareas para mostrar en gráfica");
+            alert.showAndWait();
+        }
 
     }
 
@@ -138,6 +150,7 @@ public class EmpleadoSelController {
 
 
     }
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
 
 }

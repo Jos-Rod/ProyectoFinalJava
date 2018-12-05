@@ -8,18 +8,18 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TareaController">
-   <children>
-      <Label fx:id="lblNombre" layoutX="42.0" layoutY="87.0" prefHeight="27.0" prefWidth="238.0" text="Nombre" />
-      <Label layoutX="219.0" layoutY="33.0" text="Asignar Tarea">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Label layoutX="37.0" layoutY="144.0" text="Título" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="150.0" />
-      <Label layoutX="53.0" layoutY="260.0" text="Descripción" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="200.0" />
-      <TextField fx:id="txtTitulo" layoutX="188.0" layoutY="144.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="144.0" />
-      <TextField fx:id="txtDescripcion" layoutX="207.0" layoutY="241.0" prefHeight="88.0" prefWidth="224.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="200.0" />
-      <Button fx:id="btnBack" layoutX="37.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleBack" text="Volver" />
-      <Button fx:id="btnAgregar" layoutX="487.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleAgregar" text="Agregar" />
-   </children>
+    <children>
+        <Label fx:id="lblNombre" layoutX="42.0" layoutY="87.0" prefHeight="27.0" prefWidth="238.0" text="Nombre" />
+        <Label layoutX="219.0" layoutY="33.0" text="Asignar Tarea">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Label layoutX="37.0" layoutY="144.0" text="Título" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="150.0" />
+        <Label layoutX="53.0" layoutY="260.0" text="Descripción" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="200.0" />
+        <TextField fx:id="txtTitulo" layoutX="188.0" layoutY="144.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="144.0" />
+        <TextField fx:id="txtDescripcion" layoutX="207.0" layoutY="241.0" prefHeight="88.0" prefWidth="224.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="200.0" />
+        <Button fx:id="btnBack" layoutX="37.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleBack" text="Volver" />
+        <Button fx:id="btnAgregar" layoutX="487.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleAgregar" text="Agregar" />
+    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package sample.controller;
 
+import com.sun.xml.internal.ws.wsdl.writer.document.StartWithExtensionsType;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -47,6 +48,38 @@ public class Empleado2Controller implements Initializable {
     private Button btnSalir;
 
     @FXML
+    private ComboBox cmbStatus;
+
+    @FXML
+    private void handleStatus() {
+
+        //ver cual es la seleccion para filtrar
+        switch (cmbStatus.getSelectionModel().getSelectedIndex()) {
+            case 0:
+                //no filtro
+                llenarTabla();
+                break;
+            case 1:
+                //filtro pendiente
+                llenarTablaConPendiente();
+                break;
+            case 2:
+                //filtro en espera
+                llenarTablaConEnEspera();
+                break;
+            case 3:
+                //filtro terminado
+                llenarTablaConTerminado();
+                break;
+
+                default:
+                    //asdf
+                    break;
+        }
+
+    }
+
+    @FXML
     public void handleSalir() {
 
         salir();
@@ -66,6 +99,16 @@ public class Empleado2Controller implements Initializable {
         tblDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
         tblStatus.setCellValueFactory(new PropertyValueFactory<>("estado"));
         btnRealizado.setVisible(false);
+
+        ObservableList<String> ol = FXCollections.observableArrayList();
+        ol.add("Ninguno");
+        ol.add("Pendiente");
+        ol.add("En espera");
+        ol.add("Terminado");
+
+        cmbStatus.setItems(ol);
+        cmbStatus.getSelectionModel().select(0);
+
     }
 
     @FXML
@@ -116,6 +159,48 @@ public class Empleado2Controller implements Initializable {
         TareaAPI api = new TareaAPI();
         ObservableList<Tarea> listaTareas = FXCollections.observableArrayList();
         listaTareas.addAll(api.getAllFromUser(mainapp.usuarioGlobal.getIdUser())); //aqui llenamos el array y la anadimos a la tabla
+
+        tblTarea.setItems(listaTareas);
+    }
+
+    public void llenarTablaConPendiente(){
+        tblTarea.getItems().clear();
+        TareaAPI api = new TareaAPI();
+        ObservableList<Tarea> listaTareas = FXCollections.observableArrayList();
+
+        for (Tarea tarea : api.getAllFromUser(mainapp.usuarioGlobal.getIdUser())) {
+            if (tarea.getEstado().equals("Pendiente")){
+                listaTareas.add(tarea);
+            }
+        } //aqui llenamos el array y la anadimos a la tabla
+
+        tblTarea.setItems(listaTareas);
+    }
+
+    public void llenarTablaConEnEspera(){
+        tblTarea.getItems().clear();
+        TareaAPI api = new TareaAPI();
+        ObservableList<Tarea> listaTareas = FXCollections.observableArrayList();
+
+        for (Tarea tarea : api.getAllFromUser(mainapp.usuarioGlobal.getIdUser())) {
+            if (tarea.getEstado().equals("En espera")){
+                listaTareas.add(tarea);
+            }
+        } //aqui llenamos el array y la anadimos a la tabla
+
+        tblTarea.setItems(listaTareas);
+    }
+
+    public void llenarTablaConTerminado(){
+        tblTarea.getItems().clear();
+        TareaAPI api = new TareaAPI();
+        ObservableList<Tarea> listaTareas = FXCollections.observableArrayList();
+
+        for (Tarea tarea : api.getAllFromUser(mainapp.usuarioGlobal.getIdUser())) {
+            if (tarea.getEstado().equals("Terminado")){
+                listaTareas.add(tarea);
+            }
+        } //aqui llenamos el array y la anadimos a la tabla
 
         tblTarea.setItems(listaTareas);
     }

@@ -16,9 +16,11 @@ import sample.api.UsuarioAPI;
 import sample.model.Departamento;
 import sample.model.Usuario;
 
+import javax.sound.midi.Soundbank;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -45,6 +47,8 @@ public class EmpleadosController  implements Initializable {
 
     @FXML
     private TextField txtEmail;
+
+
 
     @FXML
     private TableColumn<Usuario, String> tblCorreoColumn;
@@ -87,6 +91,8 @@ public class EmpleadosController  implements Initializable {
 
     }
 
+    private List<Usuario> listaUsuariosGlobal = new ArrayList<Usuario>();
+
     public void llenarTable(){
 
         UsuarioAPI apiUsuario = new UsuarioAPI();
@@ -94,6 +100,9 @@ public class EmpleadosController  implements Initializable {
         ObservableList<Usuario> listaUsuarios = FXCollections.observableArrayList();
 
         List<Usuario> lu = apiUsuario.getAll();
+        lu.remove(0);
+
+        listaUsuariosGlobal = lu;
         for (Usuario usuario : lu) {
             usuario.setDepartamentoNombre(dapi.getDepartamento(usuario.getDepartamento()).getName());
         }
@@ -111,6 +120,11 @@ public class EmpleadosController  implements Initializable {
 
     }
 
+    private void llenarTablaConLista(ObservableList ol) {
+        tblEmpleados.getItems().clear();
+        tblEmpleados.setItems(ol);
+    }
+
     private void prueba(int numeroClicks, TableRow tr, Usuario usuarioSeleccionado) {
         if (numeroClicks == 2 && (!tr.isEmpty())) {
             //ha dado dos clicks
@@ -121,6 +135,36 @@ public class EmpleadosController  implements Initializable {
 
         }
     }
+
+    public void filtrarporcorreo(String buscado){
+
+        List<Usuario> usuariosFiltrados = new ArrayList<Usuario>();
+
+        for (Usuario usuario : listaUsuariosGlobal) {
+
+            if (usuario.getEmail().contains(buscado) || usuario.getNombre().contains(buscado)) {
+                //correo igual
+                usuariosFiltrados.add(usuario);
+            } else {
+                //no se encuentran resultados
+
+            }
+
+        }
+
+        ObservableList<Usuario> ol = FXCollections.observableArrayList();
+        ol.addAll(usuariosFiltrados);
+
+        llenarTablaConLista(ol);
+
+    }
+
+    public void handlekeyprressed (){
+        txtEmail.setOnKeyPressed(event -> filtrarporcorreo(txtEmail.getText().trim()));
+
+    }
+
+
 
 
 }

@@ -20,7 +20,7 @@
       <Button fx:id="btnBack" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleBack" text="Volver" AnchorPane.bottomAnchor="320.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="41.0" />
       <Button fx:id="btnAddEmp" layoutX="553.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleAddEmp" text="+" />
       <Button fx:id="btnGra" layoutX="508.0" layoutY="41.0" mnemonicParsing="false" onAction="#handleGra" text="Grafica" />
-      <TextField fx:id="txtEmail" layoutX="188.0" layoutY="98.0" />
+      <TextField fx:id="txtEmail" layoutX="188.0" layoutY="98.0" onKeyPressed="#handlekeyprressed" />
       <Label layoutX="235.0" layoutY="22.0" text="Empleados">
          <font>
             <Font size="27.0" />

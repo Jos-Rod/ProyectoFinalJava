@@ -97,31 +97,53 @@ public class AddEmpleadoController implements Initializable {
                 alert.setContentText("Verifique sus Datos");
                 alert.showAndWait();
 
-
-
-
         } else {
 
+            if (!checarCorreoRepetido(email)) {
+                //el correo no esta registrado en la base de datos
 
-            UsuarioAPI uapi = new UsuarioAPI();
-            Usuario u = new Usuario();
-            u.setNombre(nombre);
-            u.setApellidos(apellidos);
-            u.setEmail(email);
-            u.setPreguntaSecreta(preguntaSecreta);
-            u.setRespuestaSecreta(respuestaSecreta);
-            u.setPassword(pwd);
-            u.setDepartamento(departamentoId);
-            u.setDob(fecha);
-            uapi.saveUsuario(u);
+                //checar la fecha
+                if (fecha.toLocalDate().isBefore(fechaMinimo.minusYears(18))) {
+                    System.out.println("La fecha esta bien, es mayor de 18");
 
-            alert.setHeaderText("Guardando Usuarion");
-            alert.setContentText("Los datos son correctos");
-            alert.showAndWait();
+                    UsuarioAPI uapi = new UsuarioAPI();
+                    Usuario u = new Usuario();
+                    u.setNombre(nombre);
+                    u.setApellidos(apellidos);
+                    u.setEmail(email);
+                    u.setPreguntaSecreta(preguntaSecreta);
+                    u.setRespuestaSecreta(respuestaSecreta);
+                    u.setPassword(pwd);
+                    u.setDepartamento(departamentoId);
+                    u.setDob(fecha);
+                    uapi.saveUsuario(u);
+
+                    alert.setHeaderText("Guardando Usuarion");
+                    alert.setContentText("Los datos son correctos");
+                    alert.showAndWait();
 
 
+                    regresar();
 
-            regresar();
+                } else {
+                    System.out.println("Es menor de 18, para el diego");
+
+                    alert.setTitle("Fecha");
+                    alert.setHeaderText("El usuario es menor");
+                    alert.setContentText("El usuario es menor de 18 años. No puede ser registrado");
+                    alert.showAndWait();
+
+                }
+
+
+            } else {
+                //el correo esta registrado en la base
+                alert.setTitle("Correo");
+                alert.setHeaderText("Correo ya registrado");
+                alert.setContentText("El correo ya esta registrado, intenta otro.");
+                alert.showAndWait();
+
+            }
 
         }
 
@@ -130,8 +152,11 @@ public class AddEmpleadoController implements Initializable {
 
     public void llenarFecha ()
     {
-       dateP.setValue(LocalDate.now());
+       dateP.setValue(LocalDate.now().minusYears(18));
+       fechaMinimo = LocalDate.now();
     }
+
+    private LocalDate fechaMinimo;
 
     @FXML
     public void initialize(URL url, ResourceBundle rb){
@@ -147,6 +172,20 @@ public class AddEmpleadoController implements Initializable {
 
     }
 
+
+    private boolean checarCorreoRepetido(String email) {
+
+        UsuarioAPI uapi = new UsuarioAPI();
+        List<Usuario> listaUsuario = uapi.getAll();
+        for (Usuario usuario : listaUsuario) {
+            if (usuario.getEmail().equals(email)) {
+                //el correo ya esta registrado en la base de datos
+                return true;
+            }
+        }
+        return false;
+
+    }
 
 
 }
